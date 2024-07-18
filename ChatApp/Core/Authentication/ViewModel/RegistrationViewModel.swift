@@ -14,7 +14,7 @@ import SwiftUI
     var fullname: String = ""
     
     func createUser() async throws {
-        try await AuthService().createUser(withEmail: self.email, password: self.password, fullname: self.fullname)
+        try await AuthService.shared.createUser(withEmail: self.email, password: self.password, fullname: self.fullname)
     }
     
 }

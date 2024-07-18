@@ -9,7 +9,13 @@ import SwiftUI
 
 struct InboxView: View {
     @State private var isShowingNewMessageView = false
-    @State private var user = User.MOCK_USER
+    @State var inboxViewModel = InboxViewModel()
+    @State private var selectedUser: User?
+    @State private var showChat = false
+    
+    private var user: User? {
+        return inboxViewModel.currentUser
+    }
     
     var body: some View {
         NavigationStack {
@@ -24,13 +30,22 @@ struct InboxView: View {
                 .listStyle(PlainListStyle())
                 .frame(height: UIScreen.main.bounds.height - 120)
             }
+            .onChange(of: selectedUser, {
+                showChat.toggle()
+                selectedUser = nil
+            })
             // for: tipo de objeto que sera passado para o destino da navegacao
             // when you get this piece of data (for), do this (destination)
             .navigationDestination(for: User.self, destination: { user in
                 ProfileView(user: user)
             })
+            .navigationDestination(isPresented: $showChat, destination: {
+                if let user = selectedUser {
+                    ChatView(user: user)
+                }
+            })
             .fullScreenCover(isPresented: $isShowingNewMessageView, content: {
-                NewMessageView()
+                NewMessageView(selectedUser: $selectedUser)
             })
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
