@@ -19,6 +19,9 @@ struct ChatService {
         let currentUserRef = FirestoreConstants.MessagesCollecttion.document(currentUid).collection(chatPartnerId).document()
         let chatPartnerRef = FirestoreConstants.MessagesCollecttion.document(chatPartnerId).collection(currentUid)
         
+        let recentCurrentUserRef = FirestoreConstants.MessagesCollecttion.document(currentUid).collection("recent-messages").document(chatPartnerId)
+        let recentPartnerRef = FirestoreConstants.MessagesCollecttion.document(chatPartnerId).collection("recent-messages").document(currentUid)
+        
         let messageId = currentUserRef.documentID
         
         let message = Message(
@@ -33,6 +36,9 @@ struct ChatService {
         
         currentUserRef.setData(messageData)
         chatPartnerRef.document(messageId).setData(messageData)
+        
+        recentCurrentUserRef.setData(messageData)
+        recentPartnerRef.setData(messageData)
     }
     
     // real time effect

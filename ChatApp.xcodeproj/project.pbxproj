@@ -16,6 +16,7 @@
 		AC21E1F72BA08D9F0030DA32 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC21E1F62BA08D9F0030DA32 /* InboxView.swift */; };
 		AC31A85B2C493F08009AE37A /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31A85A2C493F08009AE37A /* ChatService.swift */; };
 		AC31A85E2C493FEC009AE37A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31A85D2C493FEC009AE37A /* Constants.swift */; };
+		AC31A8612C4AF490009AE37A /* InboxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31A8602C4AF490009AE37A /* InboxService.swift */; };
 		AC44A7FC2BB3BFD000E5C48A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC44A7FB2BB3BFD000E5C48A /* GoogleService-Info.plist */; };
 		AC44A7FF2BB3C17400E5C48A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = AC44A7FE2BB3C17400E5C48A /* FirebaseAnalytics */; };
 		AC44A8012BB3C17400E5C48A /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = AC44A8002BB3C17400E5C48A /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -59,12 +60,17 @@
 		AC69C9A72C470DBC006F55BC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69C9A62C470DBC006F55BC /* Message.swift */; };
 		AC69C9A92C470EC5006F55BC /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69C9A82C470EC5006F55BC /* MessageService.swift */; };
 		AC69C9AD2C471167006F55BC /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69C9AC2C471167006F55BC /* ChatViewModel.swift */; };
+		AC6D4F5A2C582A2D002295E6 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6D4F592C582A2D002295E6 /* Date.swift */; };
 		AC97BFFD2C398874004E7736 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97BFFC2C398874004E7736 /* UserService.swift */; };
 		AC97C0012C3FF115004E7736 /* InboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97C0002C3FF115004E7736 /* InboxViewModel.swift */; };
 		AC97C1AA2BC4008100AEB2F4 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97C1A92BC4008100AEB2F4 /* ContentViewModel.swift */; };
 		ACB07B882BC0221500DBF694 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB07B872BC0221500DBF694 /* LoginViewModel.swift */; };
 		ACB07B8A2BC0226A00DBF694 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB07B892BC0226A00DBF694 /* RegistrationViewModel.swift */; };
 		ACB07B8C2BC0228D00DBF694 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB07B8B2BC0228D00DBF694 /* AuthService.swift */; };
+		ACC645B12C59A63B0047A54C /* ActiveNowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC645B02C59A63B0047A54C /* ActiveNowViewModel.swift */; };
+		ACC645B42C59AAB00047A54C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC645B32C59AAB00047A54C /* Route.swift */; };
+		ACD070262C5AC40E0053D2A3 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD070252C5AC40E0053D2A3 /* ImageService.swift */; };
+		ACD070292C5AD74D0053D2A3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = ACD070282C5AD74D0053D2A3 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +84,7 @@
 		AC21E1F62BA08D9F0030DA32 /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
 		AC31A85A2C493F08009AE37A /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		AC31A85D2C493FEC009AE37A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AC31A8602C4AF490009AE37A /* InboxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxService.swift; sourceTree = "<group>"; };
 		AC44A7FB2BB3BFD000E5C48A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC4581662BAB133C00B2B9AF /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
 		AC49F2632BA4545900FDB084 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -94,12 +101,16 @@
 		AC69C9A62C470DBC006F55BC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		AC69C9A82C470EC5006F55BC /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		AC69C9AC2C471167006F55BC /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		AC6D4F592C582A2D002295E6 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		AC97BFFC2C398874004E7736 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		AC97C0002C3FF115004E7736 /* InboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewModel.swift; sourceTree = "<group>"; };
 		AC97C1A92BC4008100AEB2F4 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		ACB07B872BC0221500DBF694 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		ACB07B892BC0226A00DBF694 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		ACB07B8B2BC0228D00DBF694 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		ACC645B02C59A63B0047A54C /* ActiveNowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNowViewModel.swift; sourceTree = "<group>"; };
+		ACC645B32C59AAB00047A54C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		ACD070252C5AC40E0053D2A3 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +134,7 @@
 				AC44A8212BB3C17400E5C48A /* FirebaseInAppMessaging-Beta in Frameworks */,
 				AC44A8132BB3C17400E5C48A /* FirebaseDatabaseSwift in Frameworks */,
 				AC44A81D2BB3C17400E5C48A /* FirebaseFunctions in Frameworks */,
+				ACD070292C5AD74D0053D2A3 /* Kingfisher in Frameworks */,
 				AC44A8332BB3C17400E5C48A /* FirebaseStorageCombine-Community in Frameworks */,
 				AC44A82D2BB3C17400E5C48A /* FirebaseRemoteConfig in Frameworks */,
 				AC44A8092BB3C17400E5C48A /* FirebaseAppDistribution-Beta in Frameworks */,
@@ -163,6 +175,7 @@
 				AC21E1EB2BA0790F0030DA32 /* Core */,
 				AC21E1ED2BA079620030DA32 /* Extensions */,
 				AC21E1EA2BA0790C0030DA32 /* Model */,
+				ACC645B22C59AA9E0047A54C /* Routing */,
 				AC21E1E82BA078FB0030DA32 /* Service */,
 				AC31A85C2C493FDB009AE37A /* Utils */,
 				AC21E1DE2BA078580030DA32 /* Assets.xcassets */,
@@ -185,6 +198,7 @@
 			children = (
 				AC97BFFC2C398874004E7736 /* UserService.swift */,
 				AC69C9A82C470EC5006F55BC /* MessageService.swift */,
+				ACD070252C5AC40E0053D2A3 /* ImageService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -225,6 +239,7 @@
 		AC21E1ED2BA079620030DA32 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AC6D4F592C582A2D002295E6 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -260,6 +275,7 @@
 		AC21E1F52BA08D4B0030DA32 /* Inbox */ = {
 			isa = PBXGroup;
 			children = (
+				AC31A85F2C4AF484009AE37A /* Service */,
 				AC97BFFF2C3FF103004E7736 /* ViewModel */,
 				AC97BFFE2C3FF0FF004E7736 /* View */,
 			);
@@ -280,6 +296,14 @@
 				AC31A85D2C493FEC009AE37A /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		AC31A85F2C4AF484009AE37A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AC31A8602C4AF490009AE37A /* InboxService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		AC4581652BAB131300B2B9AF /* Components */ = {
@@ -303,7 +327,8 @@
 		AC5867CE2BA12BD700C28F41 /* ActiveNow */ = {
 			isa = PBXGroup;
 			children = (
-				AC5867CF2BA12BEF00C28F41 /* ActiveNowView.swift */,
+				ACC645AE2C59A60E0047A54C /* View */,
+				ACC645AF2C59A6120047A54C /* ViewModel */,
 			);
 			path = ActiveNow;
 			sourceTree = "<group>";
@@ -410,6 +435,30 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		ACC645AE2C59A60E0047A54C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC5867CF2BA12BEF00C28F41 /* ActiveNowView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ACC645AF2C59A6120047A54C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ACC645B02C59A63B0047A54C /* ActiveNowViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ACC645B22C59AA9E0047A54C /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				ACC645B32C59AAB00047A54C /* Route.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -454,6 +503,7 @@
 				AC44A82E2BB3C17400E5C48A /* FirebaseRemoteConfigSwift */,
 				AC44A8302BB3C17400E5C48A /* FirebaseStorage */,
 				AC44A8322BB3C17400E5C48A /* FirebaseStorageCombine-Community */,
+				ACD070282C5AD74D0053D2A3 /* Kingfisher */,
 			);
 			productName = ChatApp;
 			productReference = AC21E1D72BA078570030DA32 /* ChatApp.app */;
@@ -485,6 +535,7 @@
 			mainGroup = AC21E1CE2BA078570030DA32;
 			packageReferences = (
 				AC44A7FD2BB3C17400E5C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				ACD070272C5AD74D0053D2A3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = AC21E1D82BA078570030DA32 /* Products */;
 			projectDirPath = "";
@@ -514,16 +565,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC69C9AD2C471167006F55BC /* ChatViewModel.swift in Sources */,
+				AC6D4F5A2C582A2D002295E6 /* Date.swift in Sources */,
 				AC5867D82BA1355000C28F41 /* NewMessageView.swift in Sources */,
 				AC97C0012C3FF115004E7736 /* InboxViewModel.swift in Sources */,
 				ACB07B8A2BC0226A00DBF694 /* RegistrationViewModel.swift in Sources */,
 				AC5B9D1C2BA7A638004A1046 /* SettingsOpions.swift in Sources */,
 				AC5867D52BA132FA00C28F41 /* ProfileView.swift in Sources */,
 				AC97C1AA2BC4008100AEB2F4 /* ContentViewModel.swift in Sources */,
+				ACD070262C5AC40E0053D2A3 /* ImageService.swift in Sources */,
 				AC5867D22BA12EAA00C28F41 /* InboxRowView.swift in Sources */,
 				AC5781FD2BADC46000ECF34A /* ChatView.swift in Sources */,
 				ACB07B8C2BC0228D00DBF694 /* AuthService.swift in Sources */,
 				AC21E1F22BA079EC0030DA32 /* LoginView.swift in Sources */,
+				AC31A8612C4AF490009AE37A /* InboxService.swift in Sources */,
 				AC31A85E2C493FEC009AE37A /* Constants.swift in Sources */,
 				AC5781FF2BADD04A00ECF34A /* ChatMessageCell.swift in Sources */,
 				AC5782012BADD3AA00ECF34A /* ChatBubble.swift in Sources */,
@@ -532,12 +586,14 @@
 				AC49F2642BA4545900FDB084 /* ProfileViewModel.swift in Sources */,
 				ACB07B882BC0221500DBF694 /* LoginViewModel.swift in Sources */,
 				AC97BFFD2C398874004E7736 /* UserService.swift in Sources */,
+				ACC645B42C59AAB00047A54C /* Route.swift in Sources */,
 				AC21E1DD2BA078570030DA32 /* ContentView.swift in Sources */,
 				AC21E1F72BA08D9F0030DA32 /* InboxView.swift in Sources */,
 				AC5B9D1E2BA7C0AF004A1046 /* User.swift in Sources */,
 				AC5867D02BA12BEF00C28F41 /* ActiveNowView.swift in Sources */,
 				AC69C9A92C470EC5006F55BC /* MessageService.swift in Sources */,
 				AC69C9A32C45EFE8006F55BC /* NewMessagesViewModel.swift in Sources */,
+				ACC645B12C59A63B0047A54C /* ActiveNowViewModel.swift in Sources */,
 				AC69C9A72C470DBC006F55BC /* Message.swift in Sources */,
 				AC21E1DB2BA078570030DA32 /* ChatAppApp.swift in Sources */,
 				AC21E1F42BA083630030DA32 /* RegistrationView.swift in Sources */,
@@ -756,6 +812,14 @@
 				minimumVersion = 10.23.0;
 			};
 		};
+		ACD070272C5AD74D0053D2A3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -893,6 +957,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AC44A7FD2BB3C17400E5C48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		ACD070282C5AD74D0053D2A3 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACD070272C5AD74D0053D2A3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
