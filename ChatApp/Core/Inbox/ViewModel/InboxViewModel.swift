@@ -48,4 +48,16 @@ import Firebase
             }
         }
     }
+    
+    func deleteChat(at offsets: IndexSet) {
+        Task {
+            for index in offsets {
+                let message = recentMessages[index]
+                if let chatPartnerUser = message.user {
+                    try await service.deleteMessages(chatPartner: chatPartnerUser)
+                }
+                recentMessages.remove(at: index)
+            }
+        }
+    }
 }

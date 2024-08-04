@@ -39,6 +39,7 @@ struct InboxView: View {
                             InboxRowView(message: message)
                         }
                     }
+                    .onDelete(perform: inboxViewModel.deleteChat(at:))
                 }
                 .navigationTitle("Chats")
                 .navigationBarTitleDisplayMode(.inline)
