@@ -19,13 +19,27 @@ import Foundation
     }
     
     func observeMessages() {
-        service.observeMessages() { messages in
-            self.messages.append(contentsOf: messages)
+        service.observeMessages { [weak self] messages in
+            guard let self = self else { return }
+            
+            for message in messages {
+                if let index = self.messages.firstIndex(where: { $0.id == message.id }) {
+                    self.messages[index] = message
+                } else {
+                    self.messages.append(message)
+                }
+            }
+            
+            self.readMessages()
         }
     }
     
     
     func sendMessage() {
         service.sendMessage(messageText)
+    }
+    
+    func readMessages() {
+        Task { try await service.markMessagesAsRead() }
     }
 }

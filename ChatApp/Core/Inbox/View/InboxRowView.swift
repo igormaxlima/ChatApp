@@ -9,9 +9,18 @@ import SwiftUI
 
 struct InboxRowView: View {
     let message: Message
-        
+    
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
+            if (!message.isFromCurrentUser && message.isRead == false) {
+                ZStack {
+                    Circle()
+                        .fill(Color.blue)
+                        .frame(width: 8, height: 10)
+                }
+                .frame(width: 10, height: 72)
+            }
+            
             CircularProfileImageView(user: message.user, size: .medium)
             
             VStack(alignment: .leading, spacing: 4) {
@@ -39,6 +48,6 @@ struct InboxRowView: View {
     }
 }
 
-//#Preview {
-//    InboxRowView(user: User.MOCK_USER)
-//}
+#Preview {
+    InboxRowView(message: Message.MESSAGE_MOCK)
+}

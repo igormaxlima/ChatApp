@@ -17,15 +17,27 @@ struct ChatMessageCell: View {
     var body: some View {
         HStack {
             if isFromCurrentUser {
-               Spacer()
+                Spacer()
                 
-                Text(message.messageText)
-                    .font(.subheadline)
-                    .padding(12)
-                    .background(Color(.systemBlue))
-                    .foregroundStyle(.white)
-                    .clipShape(ChatBubble(isFromCurrentUser: isFromCurrentUser))
-                    .frame(maxWidth: UIScreen.main.bounds.width / 1.5, alignment: .trailing)
+                HStack(alignment: .bottom, spacing: 4) {
+                    Text(message.messageText)
+                        .font(.subheadline)
+                        .padding(12)
+                        .padding(.trailing, 0)
+                        .foregroundStyle(.white)
+                        
+                    Image(systemName: "checkmark")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 12)
+                        .foregroundStyle(Color(message.isRead ? .green : .white))
+                        .padding(.trailing, 10)
+                        .padding(.bottom, 10)
+
+                }
+                .background(Color(.systemBlue))
+                .clipShape(ChatBubble(isFromCurrentUser: isFromCurrentUser))
+                .frame(maxWidth: UIScreen.main.bounds.width / 1.5, alignment: .trailing)
             } else {
                 HStack(alignment: .bottom, spacing: 8){
                     CircularProfileImageView(user: message.user, size: .xxSmall)
@@ -45,7 +57,7 @@ struct ChatMessageCell: View {
     }
 }
 
-//
-//#Preview {
-//    ChatMessageCell(isFromCurrentUser: false)
-//}
+
+#Preview {
+    ChatMessageCell(message: Message.MESSAGE_MOCK)
+}
