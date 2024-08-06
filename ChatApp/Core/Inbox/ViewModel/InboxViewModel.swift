@@ -45,8 +45,14 @@ import Firebase
                 } else {
                     self.recentMessages.append(messages[i])
                 }
+                
+                self.sortRecentMessages()
             }
         }
+    }
+    
+    private func sortRecentMessages() {
+        self.recentMessages.sort { $0.timestamp.dateValue() > $1.timestamp.dateValue() }
     }
     
     func deleteChat(at offsets: IndexSet) {
