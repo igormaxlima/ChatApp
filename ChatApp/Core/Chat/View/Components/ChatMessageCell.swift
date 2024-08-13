@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ChatMessageCell: View {
+    @Environment(\.colorScheme) var colorScheme
     let message: Message
     
     private var isFromCurrentUser: Bool {
@@ -46,7 +47,7 @@ struct ChatMessageCell: View {
                         .font(.subheadline)
                         .padding(12)
                         .background(Color(.systemGray5))
-                        .foregroundStyle(.black)
+                        .foregroundStyle(colorScheme == .light ? .black : .white)
                         .clipShape(ChatBubble(isFromCurrentUser: isFromCurrentUser))
                         .frame(maxWidth: UIScreen.main.bounds.width / 1.5, alignment: .leading)
                 }

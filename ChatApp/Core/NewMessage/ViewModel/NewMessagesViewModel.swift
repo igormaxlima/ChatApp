@@ -10,6 +10,15 @@ import Firebase
 
 @Observable class NewMessagesViewModel {
     var users = [User]()
+    var searchText = ""
+    
+    var filteredUsers: [User] {
+        if searchText.isEmpty {
+            return users
+        } else {
+            return users.filter { $0.fullname.lowercased().contains(searchText.lowercased()) }
+        }
+    }
     
     init() {
         Task { try await fetchUsers() }

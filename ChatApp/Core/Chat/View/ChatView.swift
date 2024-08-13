@@ -20,7 +20,6 @@ struct ChatView: View {
     var body: some View {
         VStack {
             ScrollView {
-                // header:
                 VStack(spacing: 8) {
                     CircularProfileImageView(user: user, size: .xLarge)
                     
@@ -36,8 +35,6 @@ struct ChatView: View {
 
                 }
                 
-                // messages
-                
                 LazyVStack {
                     ForEach(chatViewModel.messages) { message in
                         ChatMessageCell(message: message)
@@ -45,8 +42,8 @@ struct ChatView: View {
                 }
                 
             }
+            .defaultScrollAnchor(.bottom)
             
-            // message input view
             Spacer()
             
             ZStack(alignment: .trailing) {

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct InboxView: View {
+    @Environment(\.colorScheme) var colorScheme
     @State private var isShowingNewMessageView = false
     @State var inboxViewModel = InboxViewModel()
     @State private var selectedUser: User?
@@ -27,10 +28,10 @@ struct InboxView: View {
                     ActiveNowView()
                         .listRowSeparator(.hidden)
                         .listRowInsets(EdgeInsets())
-                        .padding(.vertical)
+                        .padding(.vertical, 8)
                         .padding(.horizontal, 4)
                     
-                    ForEach(inboxViewModel.recentMessages) { message in
+                    ForEach(inboxViewModel.filteredRecentMessages) { message in
                         ZStack {
                             NavigationLink(value: message) {
                                 EmptyView()
@@ -39,8 +40,13 @@ struct InboxView: View {
                             InboxRowView(message: message)
                         }
                     }
-                    .onDelete(perform: inboxViewModel.deleteChat(at:))
+                    .onDelete { offsets in
+                        if let index = offsets.first {
+                            inboxViewModel.deleteChat(at: index)
+                        }
+                    }
                 }
+                .searchable(text: $inboxViewModel.searchText, prompt: "Search Chats")
                 .navigationTitle("Chats")
                 .navigationBarTitleDisplayMode(.inline)
                 .listStyle(PlainListStyle())
@@ -76,6 +82,7 @@ struct InboxView: View {
                         if let user {
                             NavigationLink(value: Route.profile(user)) {
                                 CircularProfileImageView(user: user, size: .xSmall)
+                                    .padding(.bottom, 8)
                             }
                         }
                     }
@@ -88,13 +95,16 @@ struct InboxView: View {
                             Image(systemName: "square.and.pencil.circle.fill")
                                 .resizable()
                                 .frame(width: 32, height: 32)
-                                .foregroundStyle(.black, Color(.systemGray5))
+                                .foregroundStyle(colorScheme == .light ? .black : .white, Color(.systemGray5))
+                                .padding(.bottom, 8)
                         }
                     }
                 }
                 .overlay {
                     if (inboxViewModel.recentMessages.isEmpty) {
                         ContentUnavailableView("No Chats", systemImage: "bubble.left.and.exclamationmark.bubble.right", description: Text("Tap on a user to start a chat."))
+                    } else if inboxViewModel.filteredRecentMessages.isEmpty {
+                        ContentUnavailableView.search
                     }
                 }
                 

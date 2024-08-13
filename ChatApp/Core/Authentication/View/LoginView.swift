@@ -14,7 +14,7 @@ struct LoginView: View {
         NavigationStack {
             VStack {
                 Spacer()
-                //logo image
+                
                 Image("logo")
                     .resizable()
                     .scaledToFit()
@@ -22,7 +22,7 @@ struct LoginView: View {
                     .padding()
                     .shadow(radius: 10, x: 5, y: 10)
                 
-                // text fields
+                
                 VStack(spacing: 12) {
                     TextField("Enter your email", text: $loginViewModel.email)
                         .font(.subheadline)
@@ -40,7 +40,6 @@ struct LoginView: View {
                         
                 }
                 
-                // forgot password
                 Button {
                     print("Forgot the password.")
                 } label: {
@@ -53,7 +52,6 @@ struct LoginView: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 
                 
-                // login button
                 Button {
                     Task { try await loginViewModel.login() }
                 } label: {
@@ -69,7 +67,6 @@ struct LoginView: View {
                 .padding(.vertical)
                 
                 
-                // facebook login
                 HStack {
                     Rectangle()
                         .frame(width: (UIScreen.main.bounds.width / 2) - 40, height: 0.5)
@@ -84,12 +81,11 @@ struct LoginView: View {
                 .foregroundStyle(.gray)
                 
                 
-                //SIGN IN WITH GOOGLE
                 
                 Spacer()
                     
                 Divider()
-                // sign up link
+                
                 NavigationLink {
                     RegistrationView()
                         .navigationBarBackButtonHidden()

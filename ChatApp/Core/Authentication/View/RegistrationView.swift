@@ -14,7 +14,7 @@ struct RegistrationView: View {
     var body: some View {
         VStack {
             Spacer()
-            //logo image
+    
             Image("logo")
                 .resizable()
                 .scaledToFit()
@@ -22,7 +22,6 @@ struct RegistrationView: View {
                 .padding()
                 .shadow(radius: 10, x: 5, y: 10)
             
-            // text fields
             VStack(spacing: 12) {
                 TextField("Enter your email", text: $registrationViewModel.email)
                     .font(.subheadline)
@@ -48,7 +47,6 @@ struct RegistrationView: View {
             }
             
             
-            // login button
             Button {
                 Task { try await registrationViewModel.createUser() }
             } label: {
@@ -66,7 +64,7 @@ struct RegistrationView: View {
             Spacer()
                 
             Divider()
-            // sign up link
+            
             Button {
                dismiss()
             } label: {

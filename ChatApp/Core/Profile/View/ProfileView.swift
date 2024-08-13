@@ -18,15 +18,13 @@ struct ProfileView: View {
                 PhotosPicker(selection: $profileViewModel.selectedPhoto, matching: .images) {
                     
                     if let profileImage = profileViewModel.profileImage { profileImage
-                                            .resizable()
-                                            .scaledToFill()
-                                            .frame(width: 80, height: 80)
-                                            .clipShape(Circle())
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 80, height: 80)
+                        .clipShape(Circle())
                     } else {
                         CircularProfileImageView(user: user, size: .xLarge)
                     }
-                    
-                    
                 }
                 
                 Text(user.fullname)

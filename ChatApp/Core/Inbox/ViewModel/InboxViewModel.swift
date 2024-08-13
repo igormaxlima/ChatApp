@@ -12,6 +12,15 @@ import Firebase
 @Observable class InboxViewModel {
     var currentUser: User?
     var recentMessages = [Message]()
+    var searchText = ""
+    
+    var filteredRecentMessages: [Message] {
+        if searchText.isEmpty {
+            return recentMessages
+        } else {
+            return recentMessages.filter { $0.user?.fullname.lowercased().contains(searchText.lowercased()) ?? false }
+        }
+    }
     
     private var cancellables = Set<AnyCancellable>()
     private let service = InboxService()
@@ -55,15 +64,18 @@ import Firebase
         self.recentMessages.sort { $0.timestamp.dateValue() > $1.timestamp.dateValue() }
     }
     
-    func deleteChat(at offsets: IndexSet) {
+    func deleteChat(at index: Int) {
         Task {
-            for index in offsets {
-                let message = recentMessages[index]
-                if let chatPartnerUser = message.user {
+            let messageToDelete = filteredRecentMessages[index]
+            
+            
+            if let originalIndex = recentMessages.firstIndex(where: { $0.id == messageToDelete.id }) {
+                if let chatPartnerUser = recentMessages[originalIndex].user {
                     try await service.deleteMessages(chatPartner: chatPartnerUser)
                 }
-                recentMessages.remove(at: index)
+                self.recentMessages.remove(at: originalIndex)
             }
         }
     }
+    
 }
