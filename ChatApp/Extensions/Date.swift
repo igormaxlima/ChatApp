@@ -34,7 +34,7 @@ extension Date {
         if Calendar.current.isDateInToday(self) {
             return timeString()
         } else if Calendar.current.isDateInYesterday(self) {
-            return "Ontem"
+            return "Yesterday"
         } else {
             return dateString()
         }
